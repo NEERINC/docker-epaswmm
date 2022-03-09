@@ -40,5 +40,3 @@ docker build \
     --build-arg GIT_REPO_URL=${GIT_REPO_URL} \
     --build-arg GIT_REPO_TAG=${GIT_REPO_TAG} \
     --tag neerteam/epaswmm:${VERSION}${TAG_SUFFIX} .
-
-echo "neerteam/epaswmm:${VERSION}${TAG_SUFFIX}"
