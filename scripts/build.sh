@@ -36,7 +36,6 @@ fi
 
 # Build the image with arguments and tag it
 docker build \
-    --no-cache \
     --build-arg GIT_REPO_URL=${GIT_REPO_URL} \
     --build-arg GIT_REPO_TAG=${GIT_REPO_TAG} \
     --tag neerteam/epaswmm:${VERSION}${TAG_SUFFIX} .

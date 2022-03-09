@@ -1,8 +1,11 @@
 #!/bin/bash
 
-if /usr/bin/pgrep oahd >/dev/null 2>&1
-then
-    TAG_SUFFIX="-arm64-linux"
+if [[ $(uname -m) == "x86_64" ]]; then
+    if /usr/bin/pgrep oahd >/dev/null 2>&1; then
+        TAG_SUFFIX="-arm64-linux"
+    else
+        TAG_SUFFIX="-amd64-linux"
+    fi
 else
     TAG_SUFFIX="-$(arch)-linux"
 fi
