@@ -27,9 +27,12 @@ fi
 # Apple M1 chip allows Rosetta, which is a disguised amd64 shell, however, even
 # when building the image under Rosetta, it will always be an arm64 image
 # due to CPU architecture restrictions
-if /usr/bin/pgrep oahd >/dev/null 2>&1
-then
-    TAG_SUFFIX="-arm64-linux"
+if [[ $(uname -m) == "x86_64" ]]; then
+    if /usr/bin/pgrep oahd >/dev/null 2>&1; then
+        TAG_SUFFIX="-arm64-linux"
+    else
+        TAG_SUFFIX="-amd64-linux"
+    fi
 else
     TAG_SUFFIX="-$(arch)-linux"
 fi
