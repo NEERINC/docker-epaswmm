@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  epaswmm:
+    container_name: epaswmm
+    image: neerteam/epaswmm:$VERSION
+    build:
+      context: .
+      args:
+        GIT_REPO_URL: https://github.com/OpenWaterAnalytics/Stormwater-Management-Model.git
+        GIT_REPO_TAG: v5.2.0.dev7
+    env_file: .env
+    entrypoint: tail -f /dev/null
