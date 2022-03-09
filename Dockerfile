@@ -1,7 +1,8 @@
 # syntax=docker/dockerfile:1.0
 
 FROM alpine:3.15.0 AS build
-ARG VERSION
+ARG GIT_REPO_URL
+ARG GIT_REPO_TAG
 
 # Define the base workdir as /epaswmm
 WORKDIR /epaswmm
@@ -10,7 +11,7 @@ WORKDIR /epaswmm
 RUN apk add --no-cache git wget build-base cmake
 
 # Clone EPASWMM source code for the specified version
-RUN git clone -b v$VERSION --depth 1 https://github.com/USEPA/Stormwater-Management-Model.git .
+RUN git clone -b $GIT_REPO_TAG --depth 1 $GIT_REPO_URL .
 
 # Create build folder
 RUN mkdir build
