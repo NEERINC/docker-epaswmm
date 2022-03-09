@@ -22,7 +22,8 @@ else
 fi
 
 # Build the image with the tag set to the DOCKER_EPASWMM_VERSION varaible
-docker build . \
+docker build \
     --no-cache \
     --build-arg VERSION=${DOCKER_EPASWMM_VERSION} \
-    -t neerteam/epaswmm:${DOCKER_EPASWMM_VERSION}${OS_ARCHITECTURE_TAG_SUFFIX}
+    --progress plain \
+    -t neerteam/epaswmm:${DOCKER_EPASWMM_VERSION}${OS_ARCHITECTURE_TAG_SUFFIX} .
