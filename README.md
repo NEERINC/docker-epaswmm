@@ -1,6 +1,6 @@
 # docker-epaswmm
 
-Docker image for running EPASWMM simulations.
+Base docker image for running EPASWMM simulations.
 
 ## Usage
 
@@ -12,17 +12,15 @@ _See https://hub.docker.com/r/neerteam/epaswmm/tags?page=1&ordering=last_updated
 docker pull neerteam/epaswmm:5.1.15
 ```
 
-Next, run the image as a new container with the environment variable `INP_FILE_URL` passed in.
+Next, use it as a base image for your application with the specific version you want:
+```dockerfile
+FROM neerteam/epaswmm:5.1.15
 
-```sh
-docker run --name my-epaswmm-simulation -e INP_FILE_URL=http://example.com/my-inp-file neerteam/epaswmm:5.1.15
-```
+# Setup the rest of your image
+# ...
 
-When the simulation completes (assuming there were no errors), your _.rpt_ and _.out_ files will be accessible from within the container in the **/epaswmm** directory as **epaswmm.rpt** and **epaswmm.out**.
-
-```sh
-docker cp my-epaswmm-simulation:/epaswmm/epaswmm.rpt .
-docker cp my-epaswmm-simulation:/epaswmm/epaswmm.out .
+# EPASWMM can be found in /usr/local/bin
+# and is exposed in the system PATH
 ```
 
 ## Roadmap

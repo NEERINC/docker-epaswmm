@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  epaswmm:
+    container_name: epaswmm
+    image: 730549969381.dkr.ecr.us-east-2.amazonaws.com/epaswmm
+    build:
+      context: .
+      args:
+        VERSION: $VERSION
