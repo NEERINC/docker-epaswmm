@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Check that the VERSION variable is set
 if [[ -z "${VERSION}" ]]

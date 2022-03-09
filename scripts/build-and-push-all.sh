@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # 5.1.14
 IMAGE=$(VERSION=5.1.14 $(dirname "$0")/build.sh)
