@@ -27,8 +27,7 @@ fi
 # Apple M1 chip allows Rosetta, which is a disguised amd64 shell, however, even
 # when building the image under Rosetta, it will always be an arm64 image
 # due to CPU architecture restrictions
-PROC_TRANSLATED=$(sysctl -n sysctl.proc_translated)
-if [[ $PROC_TRANSLATED || 0 == 1 ]]
+if /usr/bin/pgrep oahd >/dev/null 2>&1
 then
     TAG_SUFFIX="-arm64-linux"
 else
