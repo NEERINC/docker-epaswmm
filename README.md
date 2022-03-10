@@ -9,18 +9,21 @@ Pull the image:tag down with the EPASWMM version you want to use.
 _See https://hub.docker.com/r/neerteam/epaswmm/tags?page=1&ordering=last_updated for a list of available tags._
 
 ```sh
-docker pull neerteam/epaswmm:5.1.15
+docker pull neerteam/epaswmm:5.1.15-alpine
 ```
 
 Next, use it as a base image for your application with the specific version you want:
 ```dockerfile
-FROM neerteam/epaswmm:5.1.15
+FROM neerteam/epaswmm:5.1.15-alpine
 
 # Setup the rest of your image
 # ...
 
-# EPASWMM can be found in /usr/local/bin
-# and is exposed in the system PATH
+# EPASWMM can be found in /usr/local/bin as several different linked names, with the primary being `runswmm`
+# Other ways to call the swmm binary file:
+# - `swmm`
+# - `swmm5`
+# - `epaswmm`
 ```
 
 ## Roadmap
