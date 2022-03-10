@@ -43,7 +43,7 @@ git checkout -b {bugfix/feature}/my-bugfix-or-feature
 ```sh
 git add . && git commit -m "Changed X,Y,Z" && git push
 ```
-4. Open a pull request with our repository's _main_ branch
+4. Open a pull request with our repository's _develop_ branch
 
 ## License
 
