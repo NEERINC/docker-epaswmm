@@ -1,4 +1,4 @@
-# docker-epaswmm
+# EPASWMM
 
 Base docker image for running EPASWMM simulations.
 
