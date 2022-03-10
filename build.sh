@@ -18,7 +18,7 @@ fi
 
 TAG="neerteam/epaswmm:${VERSION}-${VARIANT}-$(get_arch)-linux"
 
-# Build the image with arguments and tag it
+# Build the image and tag it
 docker build --tag $TAG ./$VERSION/$VARIANT/.
 
 echo $TAG
