@@ -20,7 +20,7 @@ WORKDIR /epaswmm/build
 # Run CMake to prepare a makefile
 RUN cmake ..
 
-# Make the library and binary file
+# Make the library and binary files
 RUN make
 
 # Get a fresh image
